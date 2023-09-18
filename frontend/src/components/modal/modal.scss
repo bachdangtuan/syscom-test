@@ -1,0 +1,61 @@
+@use 'sass:color';
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--modal-bg);
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    .modal-dialog {
+      width: 100%;
+      max-width: 50rem;
+      background-color: var(--modal-dialog-bg);
+      padding: 1rem;
+      .title {
+        display: flex;
+        align-items: top;
+        justify-content: space-between;
+        .text {
+          flex: 1;
+        }
+        .close {
+          height: fit-content;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: var(--modal-close-color);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+html {
+  .app-modal {
+    --modal-bg: #{color.change($my-black, $alpha: 0.45)};
+    --modal-dialog-bg: #{$my-black};
+    --modal-close-color: #{$my-dark-gray};
+  }
+}
+
+html.light-theme {
+  .app-modal {
+    --modal-bg: #{color.change($foundation-black, $alpha: 0.45)};
+    --modal-dialog-bg: #{$foundation-white};
+    --modal-close-color: #{$foundation-secondary};
+  }
+}
+
+html.brown-theme {
+  .app-modal {
+    --modal-bg: #{color.change($brown-black, $alpha: 0.45)};
+    --modal-dialog-bg: #{$brown-black};
+    --modal-close-color: #{$brown-dark-gray};
+  }
+}

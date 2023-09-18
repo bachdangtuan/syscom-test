@@ -1,0 +1,37 @@
+@use 'sass:color';
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-device-detail-list-object {
+    table {
+      // margin-bottom: 0;
+      tbody {
+        td.title {
+          color: $my-white;
+          background-color: var(--device-detail-list-object-title-bg);
+        }
+      }
+    }
+    .pagination-container {
+      text-align: center;
+    }
+  }
+}
+
+html {
+  .app-device-detail-list-object {
+    --device-detail-list-object-title-bg: #{color.change($my-primary, $alpha: .8)};
+  }
+}
+
+html.light-theme {
+  .app-device-detail-list-object {
+    --device-detail-list-object-title-bg: #{color.change($foundation-primary, $alpha: .8)};
+  }
+}
+
+html.brown-theme {
+  .app-device-detail-list-object {
+    --device-detail-list-object-title-bg: #{color.change($brown-primary, $alpha: .8)};
+  }
+}

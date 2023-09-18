@@ -1,0 +1,34 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .osinfo-card {
+    .information {
+      font-size: .8125rem;
+      .title {
+        min-width: 13rem;
+        color: var(--information-title-color);
+      }
+      .content {
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+html {
+  .osinfo-card {
+    --information-title-color: #{$my-medium-gray};
+  }
+}
+
+html.light-theme {
+  .osinfo-card {
+    --information-title-color: #{$foundation-secondary};
+  }
+}
+
+html.brown-theme {
+  .osinfo-card {
+    --information-title-color: #{$brown-medium-gray};
+  }
+}

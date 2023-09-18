@@ -1,0 +1,54 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-topbar-noauthen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 48px;
+    width: 100%;
+    color: var(--topbar-color);
+    background-color: var(--topbar-bg);
+    z-index: 1;
+    .app-title {
+      color: var(--app-link-color);
+      margin-bottom: 0;
+      margin-left: 1rem;
+    }
+    .icon {
+      font-size: 1.25rem;
+    }
+    .button {
+      // padding-right: 1.5rem;
+      // padding-left: 1.5rem;
+      height: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+html {
+  .app-topbar-noauthen {
+    --topbar-color: #{$my-dark-gray};
+    --topbar-bg: #{$my-black};
+    --app-link-color: #{$my-white};
+  }
+}
+
+html.light-theme {
+  .app-topbar-noauthen {
+    --topbar-color: #{$foundation-dark-gray};
+    --topbar-bg: #{$foundation-white};
+    --app-link-color: #{$foundation-black};
+  }
+}
+
+html.brown-theme {
+  .app-topbar-noauthen {
+    --topbar-color: #{$brown-dark-gray};
+    --topbar-bg: #{$brown-black};
+    --app-link-color: #{$brown-white};
+  }
+}

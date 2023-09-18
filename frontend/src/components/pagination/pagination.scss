@@ -1,0 +1,34 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  ul.pagination.app-pagination {
+    margin-bottom: 0;
+    a, button {
+      color: inherit;
+      &:hover {
+        background-color: var(--page-button-hover-bg);
+      }
+    }
+    .ellipsis::after {
+      color: inherit;
+    }
+  }
+}
+
+html {
+  ul.pagination.app-pagination {
+    --page-button-hover-bg: #{$my-dark-gray};
+  }
+}
+
+html.light-theme {
+  ul.pagination.app-pagination {
+    --page-button-hover-bg: #{$foundation-light-gray};
+  }
+}
+
+html.brown-theme {
+  ul.pagination.app-pagination {
+    --page-button-hover-bg: #{$brown-dark-gray};
+  }
+}

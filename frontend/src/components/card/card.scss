@@ -1,0 +1,28 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-card {
+    .card-divider {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+html {
+  .app-card {
+
+  }
+}
+
+html.light-theme {
+  .app-card {
+
+  }
+}
+
+html.brown-theme {
+  .app-card {
+
+  }
+}

@@ -1,0 +1,46 @@
+@use 'sass:color';
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-guide {
+    margin-top: $app-topbar-height;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    min-height: calc(100vh - #{$app-topbar-height} - #{$app-footer-height});
+    .photo {
+      width: 100%;
+      height: auto;
+    }
+    .data-structure {
+      background-color: var(--data-structure-bg);
+      padding: 1rem;
+      code {
+        padding: 0;
+        color: var(--data-structure-color);
+        border: none;
+        background: none;
+      }
+    }
+  }
+}
+
+html {
+  .app-guide {
+    --data-structure-bg: #{color.adjust($my-black, $lightness: -1%)};
+    --data-structure-color: #{color.change($my-success, $lightness: 50%)};
+  }
+}
+
+html.light-theme {
+  .app-guide {
+    --data-structure-bg: #{color.adjust($foundation-white, $lightness: -2%)};
+    --data-structure-color: #{color.change($my-success)};
+  }
+}
+
+html.brown-theme {
+  .app-guide {
+    --data-structure-bg: #{color.adjust($brown-black, $lightness: -1%)};
+    --data-structure-color: #{color.change($brown-success, $lightness: 50%)};
+  }
+}

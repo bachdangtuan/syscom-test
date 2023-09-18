@@ -1,0 +1,86 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 48px;
+    width: 100%;
+    color: var(--topbar-color);
+    background-color: var(--topbar-bg);
+    z-index: 1;
+    .icon {
+      font-size: 1.25rem;
+    }
+    .search-input {
+      height: 48px;
+      padding: 0;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background-color: var(--search-input-bg);
+      &:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        background-color: var(--search-input-focus-bg);
+      }
+    }
+    .button {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      height: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+    a {
+      &.active {
+        .button.clear.secondary {
+          background-color: var(--active-link-button-bg);
+          color: var(--active-link-button-color);
+          &:hover {
+            background-color: var(--active-link-button-hover-bg);
+          }
+        }
+      }
+    }
+  }
+}
+
+html {
+  .app-topbar {
+    --topbar-color: #{$my-dark-gray};
+    --topbar-bg: #{$my-black};
+    --search-input-bg: #{$my-black};
+    --search-input-focus-bg: #{$my-black};
+    --active-link-button-bg: #{$my-primary};
+    --active-link-button-color: #{$my-white};
+    --active-link-button-hover-bg: #{scale-color($my-primary, $lightness: -15%)};
+  }
+}
+
+html.light-theme {
+  .app-topbar {
+    --topbar-color: #{$foundation-dark-gray};
+    --topbar-bg: #{$foundation-white};
+    --search-input-bg: #{$foundation-white};
+    --search-input-focus-bg: #{$foundation-white};
+    --active-link-button-bg: #{$my-primary};
+    --active-link-button-color: #{$foundation-white};
+    --active-link-button-hover-bg: #{scale-color($my-primary, $lightness: -15%)};   
+  }
+}
+
+html.brown-theme {
+  .app-topbar {
+    --topbar-color: #{$brown-dark-gray};
+    --topbar-bg: #{$brown-black};
+    --search-input-bg: #{$brown-black};
+    --search-input-focus-bg: #{$brown-black};
+    --active-link-button-bg: #{$brown-primary};
+    --active-link-button-color: #{$brown-white};
+    --active-link-button-hover-bg: #{scale-color($brown-primary, $lightness: -15%)};
+  }
+}

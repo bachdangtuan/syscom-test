@@ -1,0 +1,149 @@
+@use 'sass:color';
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-search {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    // .advance-search {
+    //   overflow: hidden;
+    //   transition-duration: .15s;
+    //   &.expand {
+    //     height: fit-content;
+    //     margin-bottom: 1rem;
+    //   }
+    //   &.collapse {
+    //     height: 0;
+    //     margin-bottom: 0;
+    //     border: none;
+    //   }
+    //   &> div {
+    //     border: 1px solid $my-dark-gray;
+    //   }
+    //   input[type="checkbox"] {
+    //     margin: 0;
+    //   }
+    // }
+    // .total {
+    //   .highlight {
+    //     color: var(--total-highlight-color);
+    //   }
+    // }
+    .results {
+      .result-item {
+        .title-container {
+          margin-bottom: .5rem;
+          .delete-report-button {
+            .icon {
+              font-size: 1rem;
+            }
+          }
+          .result-item-title {
+            .name {
+              color: var(--result-item-name-color);
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            .score {
+              display: inline-flex;
+              padding: .25rem;
+              border-width: 2px;
+              border-style: solid;
+              border-radius: 50%;
+            }
+            .time {
+              display: inline-flex;
+              color: var(--result-item-time-color);
+            }
+          }
+        }
+        .result-item-highlight {
+          .unimportant {
+            color: var(--result-item-highlight-unimportant-color);
+          }
+          em {
+            font-style: normal;
+            font-weight: bold;
+            color: var(--result-item-highlight-emphasis-color);
+          }
+        }
+        // .description {
+        //   .description-item {
+        //     .prop {
+        //       color: $my-light-gray;
+        //     }
+        //     .value {
+        //       color: $my-light-gray;
+        //     }
+        //   }
+        // }
+      }
+    }
+    .pagination-container {
+      text-align: center;
+    }
+    .chart {
+      .card {
+        margin-bottom: 2rem;
+        border: none;
+        .card-divider {
+          background-color: var(--card-divider-bg);
+        }
+        .card-section {
+          background-color: var(--card-section-bg);
+          position: relative;
+          height: 16rem;
+          & > div.devices {
+            width: 100%;
+            height: 100%;
+            .devices-number {
+              margin: 0;
+            }
+          }
+          & > div:not(.devices) {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+html {
+  .app-search {
+    --total-highlight-color: #{$my-primary};
+    --result-item-name-color: #{$my-primary};
+    --result-item-time-color: #{$my-light-gray};
+    --result-item-highlight-unimportant-color: #{$my-light-gray};
+    --result-item-highlight-emphasis-color: #{$my-primary};
+    --card-divider-bg: #{color.change($my-dark-gray, $alpha: .2)}; 
+    --card-section-bg: #{color.change($my-dark-gray, $alpha: .15)};
+  }
+}
+
+html.light-theme {
+  .app-search {
+    --total-highlight-color: #{$my-primary};
+    --result-item-name-color: #{$my-primary};
+    --result-item-time-color: #{$foundation-dark-gray};
+    --result-item-highlight-unimportant-color: #{$foundation-dark-gray};
+    --result-item-highlight-emphasis-color: #{$my-primary};
+    --card-divider-bg: #{color.change($foundation-light-gray, $alpha: .2)}; 
+    --card-section-bg: #{color.change($foundation-light-gray, $alpha: .15)};
+  }
+}
+
+html.brown-theme {
+  .app-search {
+    --total-highlight-color: #{$brown-primary};
+    --result-item-name-color: #{$brown-primary};
+    --result-item-time-color: #{$brown-light-gray};
+    --result-item-highlight-unimportant-color: #{$brown-light-gray};
+    --result-item-highlight-emphasis-color: #{$brown-primary};
+    --card-divider-bg: #{color.change($brown-dark-gray, $alpha: 1)}; 
+    --card-section-bg: #{color.change($brown-dark-gray, $alpha: .9)};
+  }
+}

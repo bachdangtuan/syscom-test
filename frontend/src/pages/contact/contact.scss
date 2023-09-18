@@ -1,0 +1,33 @@
+@use 'sass:color';
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-contact {
+    margin-top: $app-topbar-height;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    min-height: calc(100vh - #{$app-topbar-height} - #{$app-footer-height});
+    a.email {
+      color: var(--email-color);
+    }
+  }
+}
+
+html {
+  .app-contact {
+    --email-color: #{color.change($my-primary, $lightness: 65%)};
+  }
+}
+
+html.light-theme {
+  .app-contact {
+    --email-color: #{color.change($my-primary, $lightness: 65%)};
+  }
+}
+
+html.brown-theme {
+  .app-contact {
+    --email-color: #{color.change($brown-primary, $lightness: 65%)};
+  }
+}
+

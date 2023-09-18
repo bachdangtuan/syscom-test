@@ -1,0 +1,37 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-upload-rule {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .platform-select-button.button.clear {
+      border: 1px solid var(--platform-select-button-border);
+    }
+    .control {
+      button {
+        flex: 1;
+        &:nth-child(2) {
+          margin-left: .5rem;
+        }
+      }
+    }
+  }
+}
+
+html {
+  .app-upload-rule {
+    --platform-select-button-border: #{$my-primary};
+  }
+}
+
+html.light-theme {
+  .app-upload-rule {
+    --platform-select-button-border: #{$my-primary};
+  }
+}
+
+html.brown-theme {
+  .app-upload-rule {
+    --platform-select-button-border: #{$brown-primary};
+  }
+}

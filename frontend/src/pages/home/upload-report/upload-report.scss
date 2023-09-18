@@ -1,0 +1,16 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-upload-report {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .control {
+      button {
+        flex: 1;
+        &:nth-child(2) {
+          margin-left: .5rem;
+        }
+      }
+    }
+  }
+}

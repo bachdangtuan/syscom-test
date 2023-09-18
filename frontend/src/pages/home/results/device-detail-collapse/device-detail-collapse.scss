@@ -1,0 +1,22 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-device-detail-collapse {
+    margin-bottom: 1rem;
+  }
+}
+
+html {
+  .app-device-detail-collapse {
+  }
+}
+
+html.light-theme {
+  .app-device-detail-collapse {
+  }
+}
+
+html.brown-theme {
+  .app-device-detail-collapse {
+  }
+}

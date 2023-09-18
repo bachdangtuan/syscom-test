@@ -1,0 +1,55 @@
+{
+  "name": "syscom",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@nivo/bar": "^0.67.0",
+    "@nivo/core": "^0.67.0",
+    "@nivo/pie": "^0.67.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.3",
+    "@tpacks/react-common-services": "^1.0.0",
+    "antonydb-adapters": "file:app_modules/antonydb-adapters",
+    "axios": "^0.21.1",
+    "dropify": "^0.2.2",
+    "foundation-sites": "^6.6.3",
+    "jquery": "^3.5.1",
+    "moment": "^2.29.1",
+    "qs": "^6.9.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "rxjs": "^6.6.6",
+    "sass": "^1.32.8",
+    "uuid-random": "^1.3.2",
+    "web-vitals": "^1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "build-windows": "react-scripts build",
+    "build-style": "sass --load-path=./node_modules/ src/assets/sass/style-dark.scss src/assets/styles/style-dark.css && sass --load-path=./node_modules/ src/assets/sass/style-light.scss src/assets/styles/style-light.css && sass --load-path=./node_modules/ src/assets/sass/style-brown.scss src/assets/styles/style-brown.css",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://27.118.25.210"
+}

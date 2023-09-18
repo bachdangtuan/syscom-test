@@ -1,0 +1,14 @@
+html, html.light-theme, html.brown-theme {
+  .dropify-wrapper {
+    .dropify-message {
+      .file-icon {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+    input[type="file"] {
+      margin: 0; 
+    }
+  }
+}

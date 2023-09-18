@@ -1,0 +1,26 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-device-detail-collapse-body {
+    padding: .5rem 0 0 .5rem;
+    border-left: 1px dashed var(--device-detail-collapse-body-border);
+  }
+}
+
+html {
+  .app-device-detail-collapse-body {
+    --device-detail-collapse-body-border: #{$my-dark-gray};
+  }
+}
+
+html.light-theme {
+  .app-device-detail-collapse-body {
+    --device-detail-collapse-body-border: #{$foundation-light-gray};
+  }
+}
+
+html.brown-theme {
+  .app-device-detail-collapse-body {
+    --device-detail-collapse-body-border: #{$brown-dark-gray};
+  }
+}

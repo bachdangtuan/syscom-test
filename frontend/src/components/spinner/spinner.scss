@@ -1,0 +1,43 @@
+html, html.light-theme, html.brown-theme {
+  .app-spinner {
+    display: inline-block;
+    vertical-align: bottom;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    border-top: 3px solid var(--border-top-color);
+    width: 13px;
+    height: 13px;
+    -webkit-animation: spin .5s linear infinite; /* Safari */
+    animation: spin .5s linear infinite;
+  }
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+html, html.light-theme, html.brown-theme {
+  .app-spinner {
+    --border-color: #ffffff80;
+    --border-top-color: #ffffff;
+  }
+}
+html.light-theme {
+  .app-spinner {
+    --border-color: #00000080;
+    --border-top-color: #000000;
+  }
+}
+html.brown-theme {
+  .app-spinner {
+    --border-color: #ffffff80;
+    --border-top-color: #ffffff;
+  }
+}

@@ -1,0 +1,14 @@
+@use 'assets/styles/style-dark.css';
+@use 'assets/styles/style-light.css';
+@use 'assets/styles/style-brown.css';
+
+html, html.light-theme, html.brown-theme {
+  body {
+    font-family: Arial, sans-serif;
+    font-size: .8125rem;
+  }
+
+  .button:focus {
+    outline: none;
+  }
+}

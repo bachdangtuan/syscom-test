@@ -1,0 +1,30 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-device-detail-collapse-head {
+    cursor: pointer;
+    padding: .25rem .5rem;
+    background-color: var(--device-detail-collapse-head-bg);
+    .title {
+      font-weight: bold;
+    }
+  }
+}
+
+html {
+  .app-device-detail-collapse-head {
+    --device-detail-collapse-head-bg: #{$my-dark-gray};
+  }
+}
+
+html.light-theme {
+  .app-device-detail-collapse-head {
+    --device-detail-collapse-head-bg: #{$foundation-light-gray};
+  }
+}
+
+html.brown-theme {
+  .app-device-detail-collapse-head {
+    --device-detail-collapse-head-bg: #{$brown-dark-gray};
+  }
+}

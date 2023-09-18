@@ -1,0 +1,18 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
+import App from './app';
+
+import 'dropify/dist/js/dropify';
+import './apis/axios-config';
+
+import './index.scss';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);

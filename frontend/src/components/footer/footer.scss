@@ -1,0 +1,71 @@
+@use 'sass:color';
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-footer {
+    width: 100%;
+    min-height: 11rem;
+    padding: 2rem 0;
+    background-color: var(--footer-bg);
+    display: flex;
+    flex-direction: column;
+    .links {
+      text-transform: uppercase;
+      .limit {
+        max-width: 24rem;
+        margin: auto;
+        a {
+          color: var(--link-color);
+          font-weight: 600;
+        }
+      }
+    }
+    .buttons {
+      .footer-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+        background-color: var(--button-bg);
+        color: var(--button-color);
+        border-radius: 50%;
+        font-weight: bold;
+      }
+    }
+    .copyright {
+      color: var(--copyright-color);
+    }
+  }
+}
+
+html {
+  .app-footer {
+    --footer-bg: #{color.change($my-dark-gray, $lightness: 10%)};
+    --link-color: #{$my-primary};
+    --button-bg: #{$my-dark-gray};
+    --button-color: #{$my-white};
+    --copyright-color: #{$my-white};
+  }
+}
+
+html.light-theme {
+  .app-footer {
+    --footer-bg: #{color.change($my-primary, $alpha: .025)};
+    --link-color: #{$my-primary};
+    --button-bg: #{$my-primary};
+    --button-color: #{$my-white};
+    --copyright-color: #{$my-primary};
+  }
+}
+
+html.brown-theme {
+  .app-footer {
+    --footer-bg: #{color.change($brown-dark-gray, $lightness: 7%)};
+    --link-color: #{$brown-primary};
+    --button-bg: #{$brown-dark-gray};
+    --button-color: #{$brown-white};
+    --copyright-color: #{$brown-white};
+  }
+}

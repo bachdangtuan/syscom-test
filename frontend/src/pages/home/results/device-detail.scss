@@ -1,0 +1,49 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-device-detail {
+    .app-device-detail-collapse {
+      margin-bottom: .5rem;
+      .app-device-detail-collapse-head {
+        .title {
+          input {
+            margin: 0;
+          }
+          label {
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+          }
+        }
+      }
+    }
+    .show-detail-button {
+      color: var(--show-detail-button-color);
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+html {
+  .app-device-detail {
+    --show-detail-button-color: #{$my-primary};
+    --detail-section-head-bg: #{$my-dark-gray};
+  }
+}
+
+html.light-theme {
+  .app-device-detail {
+    --show-detail-button-color: #{$foundation-primary};
+    --detail-section-head-bg: #{$foundation-light-gray};
+  }
+}
+
+html.brown-theme {
+  .app-device-detail {
+    --show-detail-button-color: #{$brown-primary};
+    --detail-section-head-bg: #{$brown-dark-gray};
+  }
+}

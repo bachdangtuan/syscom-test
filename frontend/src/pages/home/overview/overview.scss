@@ -1,0 +1,54 @@
+@use 'src/variables' as *;
+@use 'sass:color';
+
+html, html.light-theme, html.brown-theme {
+  .app-overview {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .card {
+      margin-bottom: 2rem;
+      border: none;
+      .card-divider {
+        background-color: var(--card-divider-bg);
+      }
+      .card-section {
+        background-color: var(--card-section-bg);
+        position: relative;
+        height: 20rem;
+        & > div.devices {
+          width: 100%;
+          height: 100%;
+          .devices-number {
+            margin: 0;
+          }
+        }
+        & > div:not(.devices) {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+html {
+  .app-overview {
+    --card-divider-bg: #{color.change($my-dark-gray, $alpha: .2)}; 
+    --card-section-bg: #{color.change($my-dark-gray, $alpha: .15)};
+  }
+}
+
+html.light-theme {
+  .app-overview {
+    --card-divider-bg: #{color.change($foundation-light-gray, $alpha: .2)}; 
+    --card-section-bg: #{color.change($foundation-light-gray, $alpha: .15)};
+  }
+}
+
+html.brown-theme {
+  .app-overview {
+    --card-divider-bg: #{color.change($brown-dark-gray, $alpha: 1)}; 
+    --card-section-bg: #{color.change($brown-dark-gray, $alpha: .9)};
+  }
+}

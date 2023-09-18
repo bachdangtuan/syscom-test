@@ -1,0 +1,10 @@
+@use 'src/variables' as *;
+
+html, html.light-theme, html.brown-theme {
+  .app-intro {
+    margin-top: $app-topbar-height;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    min-height: calc(100vh - #{$app-topbar-height} - #{$app-footer-height});
+  }
+}

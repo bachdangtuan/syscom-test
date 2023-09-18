@@ -1,0 +1,70 @@
+@use 'sass:color';
+@use 'src/variables' as *;
+
+$app-login-margin-vertical: 5rem;
+
+html, html.light-theme, html.brown-theme {
+  .app-login-background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-image: url('/assets/images/login-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    filter: brightness(0.5);
+  }
+  .app-login {
+    margin-top: $app-login-margin-vertical;
+    margin-bottom: $app-login-margin-vertical;
+    min-height: calc(100vh - 2 * #{$app-login-margin-vertical} - #{$app-footer-height});
+    .login-box {
+      width: 100%;
+      max-width: 28rem;
+      margin: auto;
+      padding: 1rem;
+      background-color: var(--login-box-bg);
+      backdrop-filter: blur(5px);
+      .error {
+        padding: 1rem;
+        background-color: var(--error-bg);
+        color: var(--error-color);
+        .dismiss {
+          cursor: pointer;
+        }
+      }
+    }
+    & + footer.app-footer {
+      background-color: var(--app-login-footer-bg);
+    }
+  }
+}
+
+html {
+  --app-login-footer-bg: #{color.change($my-dark-gray, $lightness: 6%)};
+  .app-login {
+    --login-box-bg: #{color.change($my-black, $alpha: .9)};
+    --error-bg: #{color.change($my-danger, $alpha: .2)};
+    --error-color: #{$my-danger};
+  }
+}
+
+html.light-theme {
+  --app-login-footer-bg: #{color.change($my-light-gray, $lightness: 100%)};
+  .app-login {
+    --login-box-bg: #{color.change($my-white, $alpha: .9)};
+    --error-bg: #{color.change($my-danger, $alpha: .2)};
+    --error-color: #{$my-danger};
+  }
+}
+
+html.brown-theme {
+  --app-login-footer-bg: #{color.change($brown-dark-gray, $lightness: 6%)};
+  .app-login {
+    --login-box-bg: #{color.change($brown-black, $alpha: .9)};
+    --error-bg: #{color.change($brown-danger, $alpha: .2)};
+    --error-color: #{$brown-danger};
+  }
+}
