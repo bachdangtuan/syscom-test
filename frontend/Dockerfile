@@ -9,7 +9,7 @@ WORKDIR /app
 COPY ./package.json .
 RUN npm install -g npm@latest && npm install
 COPY . .
-RUN npm run build-windows
+RUN npm run build
 
 # Sau khi build xong image base kết hợp với image nginx để chạy app
 FROM nginx
