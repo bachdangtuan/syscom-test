@@ -2,10 +2,13 @@
 ## NodeJS 18.17 LTS sử dụng image node 18.17 làm base image 
 # https://hub.docker.com/layers/library/node/18.17-alpine/images/sha256-ef5e088232f803cadb83326edb4731015f42961d23a11510b109c2c98cfbb945?context=explore
 
-FROM node:18.17-alpine as build
+# Giai đoạn build
+FROM node:14-alpine as build
 WORKDIR /app
 
-COPY ../frontend .
+# Copy toàn bộ nội dung của thư mục frontend từ bên ngoài vào /app
+COPY ./frontend /app
+
 RUN npm install
 RUN npm run build-windows
 
