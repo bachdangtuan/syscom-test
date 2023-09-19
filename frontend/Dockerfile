@@ -7,11 +7,11 @@ FROM node:18.17-alpine as build
 WORKDIR /app
 
 COPY ./package.json .
+COPY ./package-lock.json .
 RUN npm install -g npm@latest && npm install
 COPY . .
 RUN npm run build
 
-# Sau khi build xong image base kết hợp với image nginx để chạy app
 FROM nginx
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
