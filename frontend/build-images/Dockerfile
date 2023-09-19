@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Copy toàn bộ nội dung của thư mục frontend từ bên ngoài vào /app
 
-COPY ../package.json .
+COPY .././package.json .
 RUN npm install
 
 COPY ../. .
