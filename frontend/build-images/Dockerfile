@@ -7,9 +7,12 @@ FROM node:14-alpine as build
 WORKDIR /app
 
 # Copy toàn bộ nội dung của thư mục frontend từ bên ngoài vào /app
-COPY ../. /app
 
+COPY ../package.json .
 RUN npm install
+
+COPY ../. .
+
 RUN npm run build-windows
 
 # Sau khi build xong image base kết hợp với image nginx để chạy app
