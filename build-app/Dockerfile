@@ -12,7 +12,7 @@ RUN npm run build-windows
 # Sau khi build xong image base kết hợp với image nginx để chạy app
 FROM nginx
 
-COPY ./build-app/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 3000
