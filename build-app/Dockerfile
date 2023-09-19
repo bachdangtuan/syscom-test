@@ -5,7 +5,7 @@
 FROM node:18.17-alpine as build
 WORKDIR /app
 
-COPY ./package.json .
+COPY ./frontend/package.json .
 RUN npm install
 # Copy source vào bên trong thư mục app 
 COPY ./frontend .
