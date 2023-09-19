@@ -5,10 +5,10 @@
 FROM node:18.17-alpine as build
 WORKDIR /app
 
-COPY ../frontend/package.json .
+COPY ../frontend/package.json /app/
 RUN npm install
 # Copy source vào bên trong thư mục app 
-COPY ../frontend .
+COPY ./frontend /app/
 RUN npm run build-windows
 
 # Sau khi build xong image base kết hợp với image nginx để chạy app
