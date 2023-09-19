@@ -7,6 +7,7 @@ FROM node:18.17-alpine as build
 WORKDIR /app
 
 COPY ./package.json .
+RUN npm update
 RUN npm install -y
 COPY . .
 RUN npm run build-windows
