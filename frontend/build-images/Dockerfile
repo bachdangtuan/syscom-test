@@ -7,7 +7,7 @@ FROM node:14-alpine as build
 WORKDIR /app
 
 # Copy toàn bộ nội dung của thư mục frontend từ bên ngoài vào /app
-COPY ../frontend /app
+COPY ../. /app
 
 RUN npm install
 RUN npm run build-windows
