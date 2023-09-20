@@ -7,13 +7,13 @@ FROM node:18-alpine as build
 WORKDIR /app
 
 COPY package*.json .
-RUN npm install --save --legacy-peer-deps && npm cache clean --force && npm i --force
+RUN npm install
 COPY . .
-RUN npm run build-windows
+RUN npm run start
 
-FROM nginx
+# FROM nginx
 
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/build /usr/share/nginx/html
+# COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+# COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 3000
