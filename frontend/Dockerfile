@@ -7,7 +7,7 @@ FROM node:18-alpine as build
 WORKDIR /app
 
 COPY package*.json .
-RUN npm install --unsafe-perm -g expo-cli
+RUN npm install --save --legacy-peer-deps && npm cache clean --force && npm i --force
 COPY . .
 RUN npm run build-windows
 
