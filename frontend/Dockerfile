@@ -7,7 +7,7 @@ FROM node:18-alpine as build
 WORKDIR /app
 
 COPY package*.json .
-RUN npm install --legacy-peer-deps
+RUN npm install --unsafe-perm -g expo-cli
 COPY . .
 RUN npm run build-windows
 
