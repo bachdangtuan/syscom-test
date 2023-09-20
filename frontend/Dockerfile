@@ -9,8 +9,10 @@ WORKDIR /app
 COPY ./package.json .
 COPY ./package-lock.json .
 RUN npm install
+RUN npm --version
+
 COPY . .
-RUN npm run build-windows
+# RUN npm run build-windows
 
 FROM nginx
 
