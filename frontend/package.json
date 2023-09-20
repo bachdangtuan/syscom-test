@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
-    "build-windows": "react-scripts --openssl-legacy-provider start",
+    "build-windows": "react-scripts start",
     "build-style": "sass --load-path=./node_modules/ src/assets/sass/style-dark.scss src/assets/styles/style-dark.css && sass --load-path=./node_modules/ src/assets/sass/style-light.scss src/assets/styles/style-light.css && sass --load-path=./node_modules/ src/assets/sass/style-brown.scss src/assets/styles/style-brown.css",
     "eject": "react-scripts eject"
   },
