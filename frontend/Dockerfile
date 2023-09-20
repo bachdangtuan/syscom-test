@@ -8,9 +8,9 @@ WORKDIR /app
 
 COPY ./package.json .
 COPY ./package-lock.json .
-RUN npm install
+# RUN npm install
 RUN npm --version
-
+RUN node --version
 COPY . .
 # RUN npm run build-windows
 
