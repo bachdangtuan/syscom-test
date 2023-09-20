@@ -6,11 +6,8 @@
 FROM node:18-alpine as build
 WORKDIR /app
 
-COPY ./package.json .
-COPY ./package-lock.json .
-RUN npm install react@17.0.1
-RUN npm --version
-RUN node --version
+COPY package*.json .
+RUN npm install 
 COPY . .
 RUN npm run build-windows
 
