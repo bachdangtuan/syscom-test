@@ -3,12 +3,12 @@
 # https://hub.docker.com/layers/library/node/18.17-alpine/images/sha256-ef5e088232f803cadb83326edb4731015f42961d23a11510b109c2c98cfbb945?context=explore
 
 # Giai đoạn build
-FROM node:alpine as build
+FROM node:18-alpine as build
 WORKDIR /app
 
 COPY ./package.json .
 COPY ./package-lock.json .
-RUN npm install
+RUN npm install react@17.0.1
 RUN npm --version
 RUN node --version
 COPY . .
