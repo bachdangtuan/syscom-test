@@ -10,7 +10,7 @@ COPY ./package.json .
 COPY ./package-lock.json .
 RUN npm install -g npm@latest && npm install
 COPY . .
-RUN npm run build
+RUN npm run build-windows
 
 FROM nginx
 
